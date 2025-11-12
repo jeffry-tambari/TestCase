@@ -1,0 +1,13 @@
+TEST CASE - DEVELOPER .NET - MY PRO :
+
+Requirement :
+
+1. Rest API
+
+Quiz :
+
+1. Parsing File Json Z388-25061.Json
+2. Parse Field Function L (Loading) Pada PortCall
+3. Parse Field Activities Berdasarkan Kriteria Di Nomor 2
+4. Ambil Data Berdasarkan Name ACTUAL TIME DEPARTURE / SAILED & ACTUAL TIME ARRIVED (EOSV - END OF SEA VOYAGE)
+5. Lalu Ambil Selisih Antara Kedua Nilai Tersebut Dan Tampilkan Dalam Bentuk Response
