@@ -1,0 +1,19 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+@inject ILogger<Index> Log
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Home</h1>
+
+<button class="btn btn-primary" @onclick="NavigateToPage">Go to API Demo</button>
+
+@code {
+    private void NavigateToPage()
+    {
+        NavigationManager.NavigateTo("/api-demo", forceLoad: true);
+    }
+}
+
+

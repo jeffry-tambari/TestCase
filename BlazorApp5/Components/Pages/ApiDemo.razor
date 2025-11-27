@@ -1,0 +1,50 @@
+﻿@page "/api-demo"
+@attribute [StreamRendering]
+@inject ILogger<Index> Log
+@rendermode InteractiveServer
+@inject BlazorApp5.Components.Services.ApiService Api
+
+<PageTitle>Api Demo</PageTitle>
+
+<h1>Api Demo</h1>
+
+<button class="btn btn-primary" @onclick="GetJson">GET JSON</button>
+
+@if (journeys != null)
+{
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Sequence</th>
+                <th>Name</th>
+                <th>ATD</th>
+                <th>ATA</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var jo in journeys)
+            {
+                <tr>
+                    <td>@jo.Sequence</td>
+                    <td>@jo.Name</td>
+                    <td>@jo.ATD</td>
+                    <td>@jo.ATA</td>
+                    <td>@jo.Duration?.ToString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    List<BlazorApp5.Components.Models.JourneyPeriod>? journeys;
+
+    async Task GetJson()
+    {
+        journeys = await Api.FetchTestCaseDataAsync();
+    }
+}
+
+
